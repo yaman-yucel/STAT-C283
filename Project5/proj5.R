@@ -1,0 +1,158 @@
+a_all <- read.csv("stockData.csv", sep=",", header=TRUE) 
+
+# Use 5 year data to train 
+a_period1 <- a_all[1:60,] 
+r_period1 <- (a_period1[-1,4:ncol(a_period1)]-a_period1[-nrow(a_period1),4:ncol(a_period1)])/a_period1[-nrow(a_period1),4:ncol(a_period1)] # return of stocks
+r_m_period1 <- (a_period1[-1,3]-a_period1[-nrow(a_period1),3])/a_period1[-nrow(a_period1),3] # return of market
+
+#use test data to compute actual predictions
+a_period2 <- a_all[61:nrow(a_all),]
+r_period2 <- (a_period1[-1,4:ncol(a_period1)]-a_period1[-nrow(a_period1),4:ncol(a_period1)])/a_period1[-nrow(a_period1),4:ncol(a_period1)] # return of stocks
+r_m_period2 <- (a_period1[-1,3]-a_period1[-nrow(a_period1),3])/a_period1[-nrow(a_period1),3] # return of market
+
+n_stocks = 30
+
+#Compute period 1 betas
+mean_Rm_period1 = mean(r_m_period1)
+var_Rm_period1 <- var(r_m_period1)
+stdev_Rm_period1 <- var_Rm_period1^.5
+mean_Ri_period1 = colMeans(r_period1)
+
+betas_period1 = rep(0,n_stocks)
+alphas_period1 = rep(0,n_stocks)
+var_es_period1 = rep(0,n_stocks)
+var_betas_period1 = rep(0,n_stocks)
+
+for (i in 1:n_stocks){
+  fit <- lm(r_period1[,i] ~ r_m_period1)
+  betas_period1[i] = fit$coefficients[2]
+  alphas_period1[i] = fit$coefficients[1]
+  var_es_period1[i] = sum(fit$residuals^2)/ (nrow(r_period1) - 2)
+  var_betas_period1[i] = vcov(fit)[2,2]
+}
+#Compute actual betas
+mean_Rm_period2 = mean(r_m_period2)
+var_Rm_period2 <- var(r_m_period2)
+stdev_Rm_period2 <- var_Rm_period2^.5
+mean_Ri_period2 = colMeans(r_period2)
+
+betas_period2 = rep(0,n_stocks)
+alphas_period2 = rep(0,n_stocks)
+var_es_period2 = rep(0,n_stocks)
+var_betas_period2 = rep(0,n_stocks)
+
+for (i in 1:n_stocks){
+  fit <- lm(r_period2[,i] ~ r_m_period2)
+  betas_period2[i] = fit$coefficients[2]
+  alphas_period2[i] = fit$coefficients[1]
+  var_es_period2[i] = sum(fit$residuals^2)/ (nrow(r_period2) - 2)
+  var_betas_period2[i] = vcov(fit)[2,2]
+}
+
+#Part a
+
+#Construct covariance matrix of SIM 
+covariance_matrix_period1 = matrix(0,n_stocks,n_stocks)
+for (i in 1:n_stocks)
+{
+  for(j in 1:n_stocks){
+    if(i == j)
+    {
+      covariance_matrix_period1[i,j] = betas_period1[i] * betas_period1[i] * var_Rm_period1 + var_es_period1[i]
+    }else{
+      covariance_matrix_period1[i,j] = betas_period1[i] * betas_period1[j] * var_Rm_period1
+    }
+  }
+}
+
+inv_covmat_single_index = solve(covariance_matrix_period1)
+ones = rep(1,n_stocks)
+
+A = as.numeric(t(mean_Ri_period1) %*% inv_covmat_single_index %*% ones) 
+B = as.numeric(t(mean_Ri_period1) %*% inv_covmat_single_index %*% mean_Ri_period1) 
+C = as.numeric(t(ones)  %*% inv_covmat_single_index %*% ones) 
+D = B*C - A^2
+
+E <- seq(-0.2,0.2,.001)
+
+sigmas <- sqrt(seq(1/C,0.03,.0001)) 
+upper_part <- (A + sqrt(D*(C*sigmas^2 - 1)))*(1/C) 
+lower_part <- (A - sqrt(D*(C*sigmas^2 - 1)))*(1/C) 
+
+plot(sigmas, upper_part, lwd=5,type = "l",col = "green",xlim = c(0, 0.2), ylim= c(-0.2,0.2)) 
+lines(sigmas,lower_part, lwd=5,type = "l",col = "green")
+
+R_f = 0.002
+R = mean_Ri_period1 - R_f
+
+Z = inv_covmat_single_index %*% R
+x_G = Z / sum(Z)
+
+print("Composition of tangent")
+print(x_G)
+
+
+varg <- t(x_G) %*% covariance_matrix_period1 %*% x_G 
+Rg <- t(x_G) %*% mean_Ri_period1 
+sigmag <- sqrt(varg)
+points(sigmag,Rg, pch=19,lwd=1,col="blue")
+abline(a = R_f, b = (Rg - R_f)/sigmag , lwd = 2, col = "red")
+
+
+legend("topright", 
+       legend=c("Single index model var-cov","Tangent when R_f = 0.002", "CAL when R_f = 0.002"),
+       col=c("green","blue","red"),
+       pch = 19,
+       fill =c("green","blue","red"),
+       cex=0.8)
+
+
+
+# Part b adjust betas
+
+# Blume 
+# Use both periods to adjust betas
+fit = lm(betas_period2 ~ betas_period1)
+beta_adj_blume = fit$coef[1] + fit$coef[2] * betas_period2
+
+print("Adjusted betas using blume technique")
+print(beta_adj_blume)
+
+# Vasicek
+# In this part period 2 is the forecasted period and period 1 is the historical period
+# So we do not use period 2 to adjust betas
+
+
+vasicek_term_1 = var_betas_period1*mean(betas_period1)/(var(betas_period1)+var_betas_period1)
+vasicek_term_2 = var(betas_period1)*betas_period1/(var(betas_period1)+var_betas_period1)
+beta_adj_vasicek <- vasicek_term_1 + vasicek_term_2
+print("Adjusted betas using vasicek technique")
+print(beta_adj_vasicek)
+
+#Part c
+#Compute PRESS for the Vasicek technique
+PRESS_direct = sum((beta_adj_vasicek - betas_period2)^2)/(n_stocks)
+
+fit <- lm(betas_period2 ~ beta_adj_vasicek)
+beta_regress = fit$coefficients[2]
+r2 = summary(fit)$r.squared
+
+#Bias Component
+term1 = (mean(betas_period2) - mean(beta_adj_vasicek))^2
+print("BIAS term:")
+print(term1)
+
+Sa2 <- (29/30)*var(betas_period2)
+Sp2 <- (29/30)*var(beta_adj_vasicek)
+
+term2 = ((1-as.numeric(beta_regress))^2)*Sp2
+print("Inefficiency")
+print(term2)
+term3 = (1-r2)*Sa2
+print("Random error")
+print(term3)
+PRESS_indirect = term1 + term2 + term3
+print("Press with decomposition")
+print(PRESS_indirect)
+print("Press direct")
+print(PRESS_direct)

@@ -1,0 +1,812 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Project 3},
+  pdfauthor={Yaman Yucel},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Project 3}
+\author{Yaman Yucel}
+\date{2023-04-17}
+
+\begin{document}
+\maketitle
+
+\hypertarget{project-3}{%
+\subsection{Project 3}\label{project-3}}
+
+Part a: Convert the prices into returns for all the 5 stocks. Important
+note: In this data set the most recent data are at the beginning. You
+will need to consider this when converting the prices into returns.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{"http://www.stat.ucla.edu/\textasciitilde{}nchristo/statistics\_c183\_c283/statc183c283\_5stocks.txt"}\NormalTok{, }\AttributeTok{header=}\NormalTok{T)}
+
+\CommentTok{\#Exxon{-}mobil {-}\textgreater{} P1}
+\CommentTok{\#General Motors {-}\textgreater{} P2}
+\CommentTok{\#Hewlett Packard {-}\textgreater{} P3}
+\CommentTok{\#McDonalds {-}\textgreater{} P4}
+\CommentTok{\#Boeing {-}\textgreater{} P5}
+
+
+\CommentTok{\#Reverse the list such that older values appear on top}
+\NormalTok{b}\OtherTok{\textless{}{-}}\NormalTok{ a[}\FunctionTok{dim}\NormalTok{(a)[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,]}
+
+\CommentTok{\#Convert adjusted close prices into returns:}
+\NormalTok{r }\OtherTok{\textless{}{-}}\NormalTok{ (b[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{2}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(b)]}\SpecialCharTok{{-}}\NormalTok{b[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(b),}\DecValTok{2}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(b)])}\SpecialCharTok{/}\NormalTok{b[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(b),}\DecValTok{2}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(b)]}
+\end{Highlighting}
+\end{Shaded}
+
+Part b: Compute the mean return for each stock and the
+variance-covariance matrix.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Compute mean vector:}
+\NormalTok{means }\OtherTok{\textless{}{-}} \FunctionTok{colMeans}\NormalTok{(r)}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Means:"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Means:"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(means)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           P1           P2           P3           P4           P5 
+## 0.0027625075 0.0035831363 0.0066229478 0.0004543727 0.0045679106
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Compute variance covariance matrix }
+\NormalTok{covmat }\OtherTok{\textless{}{-}} \FunctionTok{cov}\NormalTok{(r)}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Var{-}Covar:"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Var-Covar:"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(covmat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             P1          P2          P3          P4          P5
+## P1 0.005803160 0.001389264 0.001666854 0.000789581 0.001351044
+## P2 0.001389264 0.009458804 0.003944643 0.002281200 0.002578939
+## P3 0.001666854 0.003944643 0.016293581 0.002863584 0.001469964
+## P4 0.000789581 0.002281200 0.002863584 0.009595202 0.003210827
+## P5 0.001351044 0.002578939 0.001469964 0.003210827 0.009242440
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Compute correlation matrix: }
+\NormalTok{cormat }\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(r)}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Correlation:"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Correlation:"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(cormat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           P1        P2        P3        P4        P5
+## P1 1.0000000 0.1875142 0.1714182 0.1058126 0.1844777
+## P2 0.1875142 1.0000000 0.3177469 0.2394518 0.2758225
+## P3 0.1714182 0.3177469 1.0000000 0.2290206 0.1197857
+## P4 0.1058126 0.2394518 0.2290206 1.0000000 0.3409545
+## P5 0.1844777 0.2758225 0.1197857 0.3409545 1.0000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Compute the vector of variances: }
+\NormalTok{variances }\OtherTok{\textless{}{-}} \FunctionTok{diag}\NormalTok{(covmat)}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Variances:"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Variances:"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(variances)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          P1          P2          P3          P4          P5 
+## 0.005803160 0.009458804 0.016293581 0.009595202 0.009242440
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Compute the vector of standard deviations: }
+\NormalTok{stdev }\OtherTok{\textless{}{-}} \FunctionTok{diag}\NormalTok{(covmat)}\SpecialCharTok{\^{}}\NormalTok{.}\DecValTok{5}
+\FunctionTok{print}\NormalTok{(}\StringTok{"STD"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "STD"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(stdev)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         P1         P2         P3         P4         P5 
+## 0.07617847 0.09725638 0.12764631 0.09795510 0.09613761
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Compute inverse of variance covariance matrix }
+\NormalTok{inv\_covmat }\OtherTok{\textless{}{-}} \FunctionTok{solve}\NormalTok{(covmat)}
+\end{Highlighting}
+\end{Shaded}
+
+Part c: Use only Exxon-Mobil and Boeing stocks: For these 2 stocks find
+the composition, expected return, and standard deviation of the minimum
+risk portfolio
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ones\_2 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+
+\NormalTok{r\_2 }\OtherTok{=}\NormalTok{ r[}\FunctionTok{c}\NormalTok{(}\StringTok{"P1"}\NormalTok{,}\StringTok{"P5"}\NormalTok{)]}
+
+\NormalTok{means\_2 }\OtherTok{\textless{}{-}} \FunctionTok{colMeans}\NormalTok{(r\_2)}
+\NormalTok{covmat\_2 }\OtherTok{\textless{}{-}} \FunctionTok{cov}\NormalTok{(r\_2)}
+\NormalTok{stdev\_2 }\OtherTok{\textless{}{-}} \FunctionTok{diag}\NormalTok{(covmat\_2)}\SpecialCharTok{\^{}}\NormalTok{.}\DecValTok{5}
+\NormalTok{inv\_covmat\_2 }\OtherTok{\textless{}{-}} \FunctionTok{solve}\NormalTok{(covmat\_2)}
+
+\NormalTok{min\_risk\_weight\_vector\_2 }\OtherTok{\textless{}{-}}\NormalTok{ inv\_covmat\_2  }\SpecialCharTok{\%*\%}\NormalTok{ ones\_2 }\SpecialCharTok{/}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{t}\NormalTok{(ones\_2)  }\SpecialCharTok{\%*\%}\NormalTok{  inv\_covmat\_2 }\SpecialCharTok{\%*\%}\NormalTok{ ones\_2) }
+\NormalTok{min\_risk\_varp\_2 }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(min\_risk\_weight\_vector\_2) }\SpecialCharTok{\%*\%}\NormalTok{ covmat\_2 }\SpecialCharTok{\%*\%}\NormalTok{ min\_risk\_weight\_vector\_2 }
+\NormalTok{min\_risk\_Rp\_2 }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(min\_risk\_weight\_vector\_2) }\SpecialCharTok{\%*\%}\NormalTok{ means\_2 }
+\NormalTok{min\_risk\_sigmap\_2 }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(min\_risk\_varp\_2)}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Composition min{-}risk portfolio with 2 stocks"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Composition min-risk portfolio with 2 stocks"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(min\_risk\_weight\_vector\_2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         [,1]
+## P1 0.6393153
+## P5 0.3606847
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\StringTok{"Mean of min{-}risk portolio with 2 stocks"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Mean of min-risk portolio with 2 stocks"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(min\_risk\_Rp\_2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             [,1]
+## [1,] 0.003413689
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\StringTok{"Std of min{-}risk portolio with 2 stocks"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Std of min-risk portolio with 2 stocks"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(min\_risk\_sigmap\_2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            [,1]
+## [1,] 0.06478695
+\end{verbatim}
+
+Part d : Plot the portfolio possibilities curve and identify the
+efficient frontier on it
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x1 }\OtherTok{=} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \SpecialCharTok{{-}}\DecValTok{5}\NormalTok{,}\AttributeTok{to =} \DecValTok{5}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.01}\NormalTok{) }
+\NormalTok{x2 }\OtherTok{=} \DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ x1}
+\NormalTok{means\_plot}\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FunctionTok{length}\NormalTok{(x1))}
+\NormalTok{vars\_plot }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FunctionTok{length}\NormalTok{(x1))}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(x1))\{}
+\NormalTok{  coef\_temp }\OtherTok{=} \FunctionTok{c}\NormalTok{(x1[i],x2[i])}
+\NormalTok{  means\_plot[i] }\OtherTok{=} \FunctionTok{t}\NormalTok{(coef\_temp) }\SpecialCharTok{\%*\%}\NormalTok{ means\_2}
+\NormalTok{  vars\_plot[i] }\OtherTok{=} \FunctionTok{t}\NormalTok{(coef\_temp) }\SpecialCharTok{\%*\%}\NormalTok{ covmat\_2 }\SpecialCharTok{\%*\%}\NormalTok{ coef\_temp}
+\NormalTok{\}}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(vars\_plot), means\_plot, }\AttributeTok{ylab =} \StringTok{\textquotesingle{}E\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(sigma), }\AttributeTok{main=}\StringTok{"Risk{-}Return Plot 2 Stocks (d)"}\NormalTok{) }
+\FunctionTok{points}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(min\_risk\_varp\_2), min\_risk\_Rp\_2, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{1}\NormalTok{,}\AttributeTok{col=}\StringTok{"green"}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }
+       \AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{"Minimum Risk Portfolio"}\NormalTok{,}\StringTok{"Random portfolios/Efficient Frontier"}\NormalTok{),}
+       \AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"green"}\NormalTok{,}\StringTok{"black"}\NormalTok{),}
+       \AttributeTok{pch =} \DecValTok{19}\NormalTok{,}
+       \AttributeTok{fill =}\FunctionTok{c}\NormalTok{(}\StringTok{"green"}\NormalTok{,}\StringTok{"black"}\NormalTok{),}
+       \AttributeTok{cex=}\FloatTok{0.8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{proj3_files/figure-latex/unnamed-chunk-4-1.pdf} Part e:
+Use only Exxon-Mobil, McDonalds and Boeing stocks and assume short sales
+are allowed to answer the following question: For these 3 stocks compute
+the expected return and standard deviation for many combinations of xa,
+xb, xc with xa + xb + xc = 1 and plot the cloud of points.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{coef\_3 }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{"http://www.stat.ucla.edu/\textasciitilde{}nchristo/datac183c283/statc183c283\_abc.txt"}\NormalTok{, }\AttributeTok{header=}\NormalTok{T)}
+
+\NormalTok{n\_samples\_3 }\OtherTok{=} \FunctionTok{dim}\NormalTok{(coef\_3)[}\DecValTok{1}\NormalTok{]}
+
+\NormalTok{ones\_3 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+
+\NormalTok{r\_3 }\OtherTok{=}\NormalTok{ r[}\FunctionTok{c}\NormalTok{(}\StringTok{"P1"}\NormalTok{,}\StringTok{"P4"}\NormalTok{,}\StringTok{"P5"}\NormalTok{)]}
+
+\NormalTok{means\_3 }\OtherTok{\textless{}{-}} \FunctionTok{colMeans}\NormalTok{(r\_3)}
+\NormalTok{covmat\_3 }\OtherTok{\textless{}{-}} \FunctionTok{cov}\NormalTok{(r\_3)}
+\NormalTok{stdev\_3 }\OtherTok{\textless{}{-}} \FunctionTok{diag}\NormalTok{(covmat\_3)}\SpecialCharTok{\^{}}\NormalTok{.}\DecValTok{5}
+\NormalTok{inv\_covmat\_3 }\OtherTok{\textless{}{-}} \FunctionTok{solve}\NormalTok{(covmat\_3)}
+
+\NormalTok{min\_risk\_weight\_vector\_3 }\OtherTok{\textless{}{-}}\NormalTok{ inv\_covmat\_3  }\SpecialCharTok{\%*\%}\NormalTok{ ones\_3 }\SpecialCharTok{/}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{t}\NormalTok{(ones\_3)  }\SpecialCharTok{\%*\%}\NormalTok{  inv\_covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ ones\_3) }
+\NormalTok{min\_risk\_varp\_3 }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(min\_risk\_weight\_vector\_3) }\SpecialCharTok{\%*\%}\NormalTok{ covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ min\_risk\_weight\_vector\_3 }
+\NormalTok{min\_risk\_Rp\_3 }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(min\_risk\_weight\_vector\_3) }\SpecialCharTok{\%*\%}\NormalTok{ means\_3 }
+\NormalTok{min\_risk\_sigmap\_3 }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(min\_risk\_varp\_3)}
+
+\NormalTok{means\_plot\_3 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_samples\_3)}
+\NormalTok{vars\_plot\_3 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_samples\_3)}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{n\_samples\_3)\{}
+\NormalTok{  coef\_temp }\OtherTok{=} \FunctionTok{c}\NormalTok{(coef\_3}\SpecialCharTok{$}\NormalTok{a[i],coef\_3}\SpecialCharTok{$}\NormalTok{b[i],coef\_3}\SpecialCharTok{$}\NormalTok{c[i])}
+\NormalTok{  means\_plot\_3[i] }\OtherTok{=} \FunctionTok{t}\NormalTok{(coef\_temp) }\SpecialCharTok{\%*\%}\NormalTok{ means\_3}
+\NormalTok{  vars\_plot\_3[i] }\OtherTok{=} \FunctionTok{t}\NormalTok{(coef\_temp) }\SpecialCharTok{\%*\%}\NormalTok{ covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ coef\_temp}
+\NormalTok{\}}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(vars\_plot\_3), means\_plot\_3,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{cex =} \FloatTok{0.2}\NormalTok{,}\AttributeTok{lwd=}\FloatTok{0.1}\NormalTok{,}\AttributeTok{ylab =} \StringTok{\textquotesingle{}E\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(sigma), }\AttributeTok{main=}\StringTok{"Risk{-}Return Plot 3 Stocks"}\NormalTok{) }
+\FunctionTok{points}\NormalTok{(min\_risk\_sigmap\_3,min\_risk\_Rp\_3, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{1}\NormalTok{,}\AttributeTok{col=}\StringTok{"gold"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{proj3_files/figure-latex/unnamed-chunk-5-1.pdf} PART F
+AND G SOLVED TOGETHER Part f:Assume Rf = 0.001 and that short sales are
+allowed. Find the composition, expected return and standard deviation of
+the portfolio of the point of tangency G and draw the tangent to the
+efficient frontier of question (e). Part g: Find the expected return and
+standard deviation of the portfolio that consists of 60\% and G 40\%
+risk free asset. Show this position on the capital allocation line (CAL)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(vars\_plot\_3), means\_plot\_3,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{cex =} \FloatTok{0.2}\NormalTok{,}\AttributeTok{lwd=}\FloatTok{0.1}\NormalTok{,}\AttributeTok{ylab =} \StringTok{\textquotesingle{}E\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(sigma), }\AttributeTok{main=}\StringTok{"Risk{-}Return Plot 3 Stocks"}\NormalTok{) }
+\FunctionTok{points}\NormalTok{(min\_risk\_sigmap\_3,min\_risk\_Rp\_3, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{1}\NormalTok{,}\AttributeTok{col=}\StringTok{"gold"}\NormalTok{)}
+\NormalTok{R\_f }\OtherTok{=} \FloatTok{0.001}
+\NormalTok{R\_new }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(means\_3 }\SpecialCharTok{{-}}\NormalTok{ R\_f)}
+\NormalTok{z }\OtherTok{=}\NormalTok{ inv\_covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ R\_new}
+\NormalTok{lambda\_g }\OtherTok{=}\NormalTok{ ones\_3 }\SpecialCharTok{\%*\%}\NormalTok{ z}
+\NormalTok{x\_G }\OtherTok{=}\NormalTok{ z }\SpecialCharTok{/} \FunctionTok{as.numeric}\NormalTok{(lambda\_g) }\CommentTok{\# composition}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Composition of tangent"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Composition of tangent"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(x\_G)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          [,1]
+## P1  0.5284782
+## P4 -0.4955882
+## P5  0.9671100
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{varg }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(x\_G) }\SpecialCharTok{\%*\%}\NormalTok{ covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ x\_G }
+\NormalTok{Rg }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(x\_G) }\SpecialCharTok{\%*\%}\NormalTok{ means\_3 }
+\FunctionTok{print}\NormalTok{(}\StringTok{"Expected Return of tangent"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Expected Return of tangent"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(Rg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             [,1]
+## [1,] 0.005652415
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sigmag }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(varg)}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Std of tangent"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Std of tangent"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(sigmag)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           [,1]
+## [1,] 0.1025256
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{points}\NormalTok{(sigmag,Rg, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{1}\NormalTok{,}\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\NormalTok{part\_g\_pf\_R }\OtherTok{=}\NormalTok{ R\_f }\SpecialCharTok{*} \FloatTok{0.4} \SpecialCharTok{+} \FloatTok{0.6} \SpecialCharTok{*}\NormalTok{ Rg}
+\NormalTok{part\_g\_pf\_sigma }\OtherTok{=}\NormalTok{ (part\_g\_pf\_R }\SpecialCharTok{{-}}\NormalTok{ R\_f) }\SpecialCharTok{/}\NormalTok{ ((Rg }\SpecialCharTok{{-}}\NormalTok{ R\_f)}\SpecialCharTok{/}\NormalTok{ sigmag)}
+\FunctionTok{points}\NormalTok{(part\_g\_pf\_sigma,part\_g\_pf\_R, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{1}\NormalTok{,}\AttributeTok{col=}\StringTok{"purple"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{a =}\NormalTok{ R\_f, }\AttributeTok{b =}\NormalTok{ (Rg }\SpecialCharTok{{-}}\NormalTok{ R\_f)}\SpecialCharTok{/}\NormalTok{sigmag , }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Expected E of purple(\%60{-}\%40): "}\NormalTok{,part\_g\_pf\_R))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Expected E of purple(%60-%40):  0.00379144914560649"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"STD of purple(\%60{-}\%40): "}\NormalTok{,part\_g\_pf\_sigma))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "STD of purple(%60-%40):  0.0615153481280395"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }
+       \AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{"Minimum Risk Portfolio"}\NormalTok{, }\StringTok{"Stock on CAL or A"}\NormalTok{, }\StringTok{"Tangent(G)"}\NormalTok{,}\StringTok{"CAL"}\NormalTok{,}\StringTok{"Random portfolios"}\NormalTok{),}
+       \AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"gold"}\NormalTok{,}\StringTok{"purple"}\NormalTok{, }\StringTok{"blue"}\NormalTok{,}\StringTok{"red"}\NormalTok{,}\StringTok{"black"}\NormalTok{),}
+       \AttributeTok{pch =} \DecValTok{19}\NormalTok{,}
+       \AttributeTok{fill =}\FunctionTok{c}\NormalTok{(}\StringTok{"gold"}\NormalTok{,}\StringTok{"purple"}\NormalTok{, }\StringTok{"blue"}\NormalTok{,}\StringTok{"red"}\NormalTok{,}\StringTok{"black"}\NormalTok{),}
+       \AttributeTok{cex=}\FloatTok{0.8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{proj3_files/figure-latex/unnamed-chunk-6-1.pdf} Part h:
+Refer to question (g). Use the expected value (E) you found in (g) to
+compute
+
+\begin{equation}
+x=\frac{\left(E-R_f\right) \Sigma^{-1}\left(\overline{R}-R_f 1\right)}{\left(\overline{R}-R_f 1\right)^{\prime} \Sigma^{-1}\left(\overline{R}-R_f 1\right)}
+\end{equation}
+
+What does this x represent? ANSWER: x is the composition of any stock on
+the CAL which was drawn above. x varies according to E, expected return
+from stocks. For g, it is the composition when portfolio consists of
+60\% G and 40\% risk free asset. Expected return and risk is written
+above for that portolfolio.Also, plotted as the the purple point.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Expected E of purple(\%60{-}\%40): "}\NormalTok{,part\_g\_pf\_R))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Expected E of purple(%60-%40):  0.00379144914560649"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"STD of purple(\%60{-}\%40): "}\NormalTok{,part\_g\_pf\_sigma))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "STD of purple(%60-%40):  0.0615153481280395"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{E }\OtherTok{=} \FunctionTok{as.numeric}\NormalTok{(Rg)}
+\NormalTok{composition\_portfolio\_g }\OtherTok{=}\NormalTok{ (E }\SpecialCharTok{{-}}\NormalTok{ R\_f) }\SpecialCharTok{*}\NormalTok{( inv\_covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ R\_new }\SpecialCharTok{/} \FunctionTok{as.numeric}\NormalTok{( }\FunctionTok{t}\NormalTok{(R\_new) }\SpecialCharTok{\%*\%}\NormalTok{ inv\_covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ R\_new))}
+\CommentTok{\#This is the composition of portfolio in plotted with purple( 60\% risk, 40\% free)}
+\FunctionTok{print}\NormalTok{(composition\_portfolio\_g)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          [,1]
+## P1  0.5284782
+## P4 -0.4955882
+## P5  0.9671100
+\end{verbatim}
+
+Part i: Now assume that short sales are allowed but risk free asset does
+not exist. Part 1: Using Rf 1 = 0.001 and Rf 2 = 0.002 find the
+composition of two portfolios A and B (tangent to the efficient frontier
+- you found the one with Rf 1 = 0.001 in question (f)).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{R\_f1 }\OtherTok{=} \FloatTok{0.001}
+\NormalTok{R\_newA }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(means\_3 }\SpecialCharTok{{-}}\NormalTok{ R\_f1)}
+\NormalTok{z }\OtherTok{=}\NormalTok{ inv\_covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ R\_newA}
+\NormalTok{lambda\_g }\OtherTok{=}\NormalTok{ ones\_3 }\SpecialCharTok{\%*\%}\NormalTok{ z}
+\NormalTok{x\_A }\OtherTok{=}\NormalTok{ z }\SpecialCharTok{/} \FunctionTok{as.numeric}\NormalTok{(lambda\_g) }\CommentTok{\# composition}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Composition when Rf = 0.001"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Composition when Rf = 0.001"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(x\_A)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          [,1]
+## P1  0.5284782
+## P4 -0.4955882
+## P5  0.9671100
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{R\_f2 }\OtherTok{=} \FloatTok{0.002}
+\NormalTok{R\_newB }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(means\_3 }\SpecialCharTok{{-}}\NormalTok{ R\_f2)}
+\NormalTok{z }\OtherTok{=}\NormalTok{ inv\_covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ R\_newB}
+\NormalTok{lambda\_g }\OtherTok{=}\NormalTok{ ones\_3 }\SpecialCharTok{\%*\%}\NormalTok{ z}
+\NormalTok{x\_B }\OtherTok{=}\NormalTok{ z }\SpecialCharTok{/} \FunctionTok{as.numeric}\NormalTok{(lambda\_g) }\CommentTok{\# composition}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Composition when Rf = 0.002"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Composition when Rf = 0.002"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(x\_B)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          [,1]
+## P1  0.5312205
+## P4 -1.8026632
+## P5  2.2714427
+\end{verbatim}
+
+Part 2: Compute the covariance between portfolios A and B?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cov\_AB }\OtherTok{=} \FunctionTok{t}\NormalTok{(x\_A) }\SpecialCharTok{\%*\%}\NormalTok{ covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ x\_B}
+\NormalTok{var\_A }\OtherTok{=} \FunctionTok{t}\NormalTok{(x\_A) }\SpecialCharTok{\%*\%}\NormalTok{ covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ x\_A}
+\NormalTok{var\_B }\OtherTok{=} \FunctionTok{t}\NormalTok{(x\_B) }\SpecialCharTok{\%*\%}\NormalTok{ covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ x\_B}
+\NormalTok{mean\_A }\OtherTok{=} \FunctionTok{t}\NormalTok{(x\_A) }\SpecialCharTok{\%*\%}\NormalTok{ means\_3}
+\NormalTok{mean\_B }\OtherTok{=} \FunctionTok{t}\NormalTok{(x\_B) }\SpecialCharTok{\%*\%}\NormalTok{ means\_3}
+\NormalTok{mean\_AB }\OtherTok{=} \FunctionTok{c}\NormalTok{(mean\_A,mean\_B)}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Covariance between portfolios A and B"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Covariance between portfolios A and B"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(cov\_AB)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            [,1]
+## [1,] 0.02264823
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(vars\_plot\_3), means\_plot\_3,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{cex =} \FloatTok{0.2}\NormalTok{,}\AttributeTok{lwd=}\FloatTok{0.1}\NormalTok{,}\AttributeTok{ylab =} \StringTok{\textquotesingle{}E\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(sigma), }\AttributeTok{main=}\StringTok{"Risk{-}Return Plot 3 Stocks"}\NormalTok{) }
+
+\FunctionTok{points}\NormalTok{(min\_risk\_sigmap\_3,min\_risk\_Rp\_3, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{1}\NormalTok{,}\AttributeTok{col=}\StringTok{"gold"}\NormalTok{)}
+\CommentTok{\#points(sqrt(var\_A), mean\_A,pch=19, ylab = \textquotesingle{}E\textquotesingle{}, xlab = expression(sigma), main="Risk{-}Return Plot",col="orange") }
+\FunctionTok{points}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(var\_B), mean\_B,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{, }\AttributeTok{ylab =} \StringTok{\textquotesingle{}E\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(sigma), }\AttributeTok{main=}\StringTok{"Risk{-}Return Plot"}\NormalTok{,}\AttributeTok{col=}\StringTok{"green"}\NormalTok{) }
+\FunctionTok{points}\NormalTok{(sigmag,Rg, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{1}\NormalTok{,}\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\FunctionTok{points}\NormalTok{(part\_g\_pf\_sigma,part\_g\_pf\_R, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{1}\NormalTok{,}\AttributeTok{col=}\StringTok{"purple"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{a =}\NormalTok{ R\_f, }\AttributeTok{b =}\NormalTok{ (Rg }\SpecialCharTok{{-}}\NormalTok{ R\_f)}\SpecialCharTok{/}\NormalTok{sigmag , }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{)}
+
+
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }
+       \AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{"Minimum Risk Portfolio"}\NormalTok{, }\StringTok{"Stock on CAL or A"}\NormalTok{, }\StringTok{"Tangent(G)"}\NormalTok{,}\StringTok{"CAL"}\NormalTok{, }\StringTok{"Stock B"}\NormalTok{,}\StringTok{"Random portfolios"}\NormalTok{),}
+       \AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"gold"}\NormalTok{,}\StringTok{"purple"}\NormalTok{, }\StringTok{"blue"}\NormalTok{,}\StringTok{"red"}\NormalTok{,}\StringTok{"green"}\NormalTok{,}\StringTok{"black"}\NormalTok{),}
+       \AttributeTok{pch =} \DecValTok{19}\NormalTok{,}
+       \AttributeTok{fill =}\FunctionTok{c}\NormalTok{(}\StringTok{"gold"}\NormalTok{,}\StringTok{"purple"}\NormalTok{, }\StringTok{"blue"}\NormalTok{,}\StringTok{"red"}\NormalTok{,}\StringTok{"green"}\NormalTok{,}\StringTok{"black"}\NormalTok{),}
+       \AttributeTok{cex=}\FloatTok{0.8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{proj3_files/figure-latex/unnamed-chunk-9-1.pdf} Part 3:
+Use your answers to (1) and (2) to trace out the efficient frontier of
+the stocks Exxon-Mobil, McDonalds, Boeing. Use a different color to show
+that the frontier is located on top of the cloud of points from question
+(e).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vec }\OtherTok{=} \FunctionTok{c}\NormalTok{(var\_A,cov\_AB,cov\_AB,var\_B)}
+\NormalTok{covmat\_AB }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(vec, }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
+
+\NormalTok{x1 }\OtherTok{=} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \SpecialCharTok{{-}}\DecValTok{5}\NormalTok{,}\AttributeTok{to =} \DecValTok{5}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.01}\NormalTok{) }
+\NormalTok{x2 }\OtherTok{=} \DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ x1}
+
+\NormalTok{vars\_plot }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FunctionTok{length}\NormalTok{(x1))}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(x1))\{}
+\NormalTok{  coef\_temp }\OtherTok{=} \FunctionTok{c}\NormalTok{(x1[i],x2[i])}
+\NormalTok{  means\_plot[i] }\OtherTok{=} \FunctionTok{t}\NormalTok{(coef\_temp) }\SpecialCharTok{\%*\%}\NormalTok{ mean\_AB}
+\NormalTok{  vars\_plot[i] }\OtherTok{=} \FunctionTok{t}\NormalTok{(coef\_temp) }\SpecialCharTok{\%*\%}\NormalTok{ covmat\_AB }\SpecialCharTok{\%*\%}\NormalTok{ coef\_temp}
+\NormalTok{\}}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(vars\_plot\_3), means\_plot\_3,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{cex =} \FloatTok{0.2}\NormalTok{,}\AttributeTok{lwd=}\FloatTok{0.1}\NormalTok{,}\AttributeTok{ylab =} \StringTok{\textquotesingle{}E\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(sigma), }\AttributeTok{main=}\StringTok{"Risk{-}Return Plot 3 Stocks"}\NormalTok{) }
+
+\FunctionTok{points}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(vars\_plot), means\_plot,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{ , }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(sigma),}\AttributeTok{cex =} \FloatTok{0.1}\NormalTok{, }\AttributeTok{main=}\StringTok{"Risk{-}Return Plot"}\NormalTok{,}\AttributeTok{col=}\StringTok{"green"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{proj3_files/figure-latex/unnamed-chunk-10-1.pdf} Part
+4:Find the composition of the minimum risk portfolio using the three
+stocks (how much of each stock) and its expected return, and standard
+deviation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{min\_risk\_weight\_vector\_3 }\OtherTok{\textless{}{-}}\NormalTok{ inv\_covmat\_3  }\SpecialCharTok{\%*\%}\NormalTok{ ones\_3 }\SpecialCharTok{/}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{t}\NormalTok{(ones\_3)  }\SpecialCharTok{\%*\%}\NormalTok{  inv\_covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ ones\_3) }
+\NormalTok{min\_risk\_varp\_3 }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(min\_risk\_weight\_vector\_3) }\SpecialCharTok{\%*\%}\NormalTok{ covmat\_3 }\SpecialCharTok{\%*\%}\NormalTok{ min\_risk\_weight\_vector\_3 }
+\NormalTok{min\_risk\_Rp\_3 }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(min\_risk\_weight\_vector\_3) }\SpecialCharTok{\%*\%}\NormalTok{ means\_3 }
+\NormalTok{min\_risk\_sigmap\_3 }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(min\_risk\_varp\_3)}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(vars\_plot\_3), means\_plot\_3,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{cex =} \FloatTok{0.2}\NormalTok{,}\AttributeTok{lwd=}\FloatTok{0.1}\NormalTok{,}\AttributeTok{ylab =} \StringTok{\textquotesingle{}E\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(sigma), }\AttributeTok{main=}\StringTok{"Risk{-}Return Plot 3 Stocks"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Minimum Variance Portfolio Composition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Minimum Variance Portfolio Composition"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(min\_risk\_weight\_vector\_3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         [,1]
+## P1 0.5269063
+## P4 0.2536533
+## P5 0.2194404
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\StringTok{"Expected return of min{-}var portfolio"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Expected return of min-var portfolio"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(min\_risk\_Rp\_3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            [,1]
+## [1,] 0.00257322
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\StringTok{"STD of Minimum Variance Portfolio Composition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "STD of Minimum Variance Portfolio Composition"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(min\_risk\_varp\_3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             [,1]
+## [1,] 0.003554475
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{points}\NormalTok{(min\_risk\_sigmap\_3, min\_risk\_Rp\_3,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{ , }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(sigma),}\AttributeTok{cex =} \DecValTok{1}\NormalTok{, }\AttributeTok{main=}\StringTok{"Risk{-}Return Plot"}\NormalTok{,}\AttributeTok{col=}\StringTok{"blue"}\NormalTok{) }
+\FunctionTok{points}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(vars\_plot), means\_plot,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{ , }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(sigma),}\AttributeTok{cex =} \FloatTok{0.1}\NormalTok{, }\AttributeTok{main=}\StringTok{"Risk{-}Return Plot"}\NormalTok{,}\AttributeTok{col=}\StringTok{"green"}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }
+       \AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{"Minimum Risk Portfolio"}\NormalTok{,}\StringTok{"Random portfolios"}\NormalTok{,}\StringTok{"Efficient Frontier/Traced with A and B"}\NormalTok{),}
+       \AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{,}\StringTok{"black"}\NormalTok{,}\StringTok{"green"}\NormalTok{),}
+       \AttributeTok{pch =} \DecValTok{19}\NormalTok{,}
+       \AttributeTok{fill =}\FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{,}\StringTok{"black"}\NormalTok{,}\StringTok{"green"}\NormalTok{),}
+       \AttributeTok{cex=}\FloatTok{0.8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{proj3_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+\end{document}

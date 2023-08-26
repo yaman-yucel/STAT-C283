@@ -1,0 +1,479 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Project 5},
+  pdfauthor={Yaman Yucel},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Project 5}
+\author{Yaman Yucel}
+\date{2023-04-27}
+
+\begin{document}
+\maketitle
+
+Project 5
+
+Before answering questions I have computed betas for periods 01-Jan-2015
+to 01-Jan-2020 named as period 1, and 01-Jan-2020 to 31-Mar-2023 named
+as period 2
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a\_all }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"stockData.csv"}\NormalTok{, }\AttributeTok{sep=}\StringTok{","}\NormalTok{, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{) }
+
+\CommentTok{\# Use 5 year data to train }
+\NormalTok{a\_period1 }\OtherTok{\textless{}{-}}\NormalTok{ a\_all[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{60}\NormalTok{,] }
+\NormalTok{r\_period1 }\OtherTok{\textless{}{-}}\NormalTok{ (a\_period1[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{4}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(a\_period1)]}\SpecialCharTok{{-}}\NormalTok{a\_period1[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(a\_period1),}\DecValTok{4}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(a\_period1)])}\SpecialCharTok{/}\NormalTok{a\_period1[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(a\_period1),}\DecValTok{4}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(a\_period1)] }\CommentTok{\# return of stocks}
+\NormalTok{r\_m\_period1 }\OtherTok{\textless{}{-}}\NormalTok{ (a\_period1[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{]}\SpecialCharTok{{-}}\NormalTok{a\_period1[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(a\_period1),}\DecValTok{3}\NormalTok{])}\SpecialCharTok{/}\NormalTok{a\_period1[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(a\_period1),}\DecValTok{3}\NormalTok{] }\CommentTok{\# return of market}
+
+\CommentTok{\#use test data to compute actual predictions}
+\NormalTok{a\_period2 }\OtherTok{\textless{}{-}}\NormalTok{ a\_all[}\DecValTok{61}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(a\_all),]}
+\NormalTok{r\_period2 }\OtherTok{\textless{}{-}}\NormalTok{ (a\_period1[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{4}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(a\_period1)]}\SpecialCharTok{{-}}\NormalTok{a\_period1[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(a\_period1),}\DecValTok{4}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(a\_period1)])}\SpecialCharTok{/}\NormalTok{a\_period1[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(a\_period1),}\DecValTok{4}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(a\_period1)] }\CommentTok{\# return of stocks}
+\NormalTok{r\_m\_period2 }\OtherTok{\textless{}{-}}\NormalTok{ (a\_period1[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{]}\SpecialCharTok{{-}}\NormalTok{a\_period1[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(a\_period1),}\DecValTok{3}\NormalTok{])}\SpecialCharTok{/}\NormalTok{a\_period1[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(a\_period1),}\DecValTok{3}\NormalTok{] }\CommentTok{\# return of market}
+
+\NormalTok{n\_stocks }\OtherTok{=} \DecValTok{30}
+
+\CommentTok{\#Compute period 1 betas}
+\NormalTok{mean\_Rm\_period1 }\OtherTok{=} \FunctionTok{mean}\NormalTok{(r\_m\_period1)}
+\NormalTok{var\_Rm\_period1 }\OtherTok{\textless{}{-}} \FunctionTok{var}\NormalTok{(r\_m\_period1)}
+\NormalTok{stdev\_Rm\_period1 }\OtherTok{\textless{}{-}}\NormalTok{ var\_Rm\_period1}\SpecialCharTok{\^{}}\NormalTok{.}\DecValTok{5}
+\NormalTok{mean\_Ri\_period1 }\OtherTok{=} \FunctionTok{colMeans}\NormalTok{(r\_period1)}
+
+\NormalTok{betas\_period1 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_stocks)}
+\NormalTok{alphas\_period1 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_stocks)}
+\NormalTok{var\_es\_period1 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_stocks)}
+\NormalTok{var\_betas\_period1 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_stocks)}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{n\_stocks)\{}
+\NormalTok{  fit }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(r\_period1[,i] }\SpecialCharTok{\textasciitilde{}}\NormalTok{ r\_m\_period1)}
+\NormalTok{  betas\_period1[i] }\OtherTok{=}\NormalTok{ fit}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{]}
+\NormalTok{  alphas\_period1[i] }\OtherTok{=}\NormalTok{ fit}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{]}
+\NormalTok{  var\_es\_period1[i] }\OtherTok{=} \FunctionTok{sum}\NormalTok{(fit}\SpecialCharTok{$}\NormalTok{residuals}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}\SpecialCharTok{/}\NormalTok{ (}\FunctionTok{nrow}\NormalTok{(r\_period1) }\SpecialCharTok{{-}} \DecValTok{2}\NormalTok{)}
+\NormalTok{  var\_betas\_period1[i] }\OtherTok{=} \FunctionTok{vcov}\NormalTok{(fit)[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{]}
+\NormalTok{\}}
+\CommentTok{\#Compute period 2 betas}
+\NormalTok{mean\_Rm\_period2 }\OtherTok{=} \FunctionTok{mean}\NormalTok{(r\_m\_period2)}
+\NormalTok{var\_Rm\_period2 }\OtherTok{\textless{}{-}} \FunctionTok{var}\NormalTok{(r\_m\_period2)}
+\NormalTok{stdev\_Rm\_period2 }\OtherTok{\textless{}{-}}\NormalTok{ var\_Rm\_period2}\SpecialCharTok{\^{}}\NormalTok{.}\DecValTok{5}
+\NormalTok{mean\_Ri\_period2 }\OtherTok{=} \FunctionTok{colMeans}\NormalTok{(r\_period2)}
+
+\NormalTok{betas\_period2 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_stocks)}
+\NormalTok{alphas\_period2 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_stocks)}
+\NormalTok{var\_es\_period2 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_stocks)}
+\NormalTok{var\_betas\_period2 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_stocks)}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{n\_stocks)\{}
+\NormalTok{  fit }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(r\_period2[,i] }\SpecialCharTok{\textasciitilde{}}\NormalTok{ r\_m\_period2)}
+\NormalTok{  betas\_period2[i] }\OtherTok{=}\NormalTok{ fit}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{]}
+\NormalTok{  alphas\_period2[i] }\OtherTok{=}\NormalTok{ fit}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{]}
+\NormalTok{  var\_es\_period2[i] }\OtherTok{=} \FunctionTok{sum}\NormalTok{(fit}\SpecialCharTok{$}\NormalTok{residuals}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}\SpecialCharTok{/}\NormalTok{ (}\FunctionTok{nrow}\NormalTok{(r\_period2) }\SpecialCharTok{{-}} \DecValTok{2}\NormalTok{)}
+\NormalTok{  var\_betas\_period2[i] }\OtherTok{=} \FunctionTok{vcov}\NormalTok{(fit)[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{]}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Part a: Assume the single index model holds. Use only the stocks with
+positive betas in your data. Choose a value of Rf and find the optimal
+portfolio (point of tangency) using the optimization procedure as
+discussed in handout \#12:
+\url{http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_tangent.pdf}
+.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Construct covariance matrix of SIM }
+\NormalTok{covariance\_matrix\_period1 }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(}\DecValTok{0}\NormalTok{,n\_stocks,n\_stocks)}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{n\_stocks)}
+\NormalTok{\{}
+  \ControlFlowTok{for}\NormalTok{(j }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{n\_stocks)\{}
+    \ControlFlowTok{if}\NormalTok{(i }\SpecialCharTok{==}\NormalTok{ j)}
+\NormalTok{    \{}
+\NormalTok{      covariance\_matrix\_period1[i,j] }\OtherTok{=}\NormalTok{ betas\_period1[i] }\SpecialCharTok{*}\NormalTok{ betas\_period1[i] }\SpecialCharTok{*}\NormalTok{ var\_Rm\_period1 }\SpecialCharTok{+}\NormalTok{ var\_es\_period1[i]}
+\NormalTok{    \}}\ControlFlowTok{else}\NormalTok{\{}
+\NormalTok{      covariance\_matrix\_period1[i,j] }\OtherTok{=}\NormalTok{ betas\_period1[i] }\SpecialCharTok{*}\NormalTok{ betas\_period1[j] }\SpecialCharTok{*}\NormalTok{ var\_Rm\_period1}
+\NormalTok{    \}}
+\NormalTok{  \}}
+\NormalTok{\}}
+
+\NormalTok{inv\_covmat\_single\_index }\OtherTok{=} \FunctionTok{solve}\NormalTok{(covariance\_matrix\_period1)}
+\NormalTok{ones }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{,n\_stocks)}
+
+\NormalTok{A }\OtherTok{=} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{t}\NormalTok{(mean\_Ri\_period1) }\SpecialCharTok{\%*\%}\NormalTok{ inv\_covmat\_single\_index }\SpecialCharTok{\%*\%}\NormalTok{ ones) }
+\NormalTok{B }\OtherTok{=} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{t}\NormalTok{(mean\_Ri\_period1) }\SpecialCharTok{\%*\%}\NormalTok{ inv\_covmat\_single\_index }\SpecialCharTok{\%*\%}\NormalTok{ mean\_Ri\_period1) }
+\NormalTok{C }\OtherTok{=} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{t}\NormalTok{(ones)  }\SpecialCharTok{\%*\%}\NormalTok{ inv\_covmat\_single\_index }\SpecialCharTok{\%*\%}\NormalTok{ ones) }
+\NormalTok{D }\OtherTok{=}\NormalTok{ B}\SpecialCharTok{*}\NormalTok{C }\SpecialCharTok{{-}}\NormalTok{ A}\SpecialCharTok{\^{}}\DecValTok{2}
+
+\NormalTok{E }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{0.2}\NormalTok{,}\FloatTok{0.2}\NormalTok{,.}\DecValTok{001}\NormalTok{)}
+
+\NormalTok{sigmas }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(}\FunctionTok{seq}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{C,}\FloatTok{0.03}\NormalTok{,.}\DecValTok{0001}\NormalTok{)) }
+\NormalTok{upper\_part }\OtherTok{\textless{}{-}}\NormalTok{ (A }\SpecialCharTok{+} \FunctionTok{sqrt}\NormalTok{(D}\SpecialCharTok{*}\NormalTok{(C}\SpecialCharTok{*}\NormalTok{sigmas}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)))}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{C) }
+\NormalTok{lower\_part }\OtherTok{\textless{}{-}}\NormalTok{ (A }\SpecialCharTok{{-}} \FunctionTok{sqrt}\NormalTok{(D}\SpecialCharTok{*}\NormalTok{(C}\SpecialCharTok{*}\NormalTok{sigmas}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)))}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{C) }
+
+\FunctionTok{plot}\NormalTok{(sigmas, upper\_part, }\AttributeTok{lwd=}\DecValTok{5}\NormalTok{,}\AttributeTok{type =} \StringTok{"l"}\NormalTok{,}\AttributeTok{col =} \StringTok{"green"}\NormalTok{,}\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.2}\NormalTok{), }\AttributeTok{ylim=} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{0.2}\NormalTok{,}\FloatTok{0.2}\NormalTok{)) }
+\FunctionTok{lines}\NormalTok{(sigmas,lower\_part, }\AttributeTok{lwd=}\DecValTok{5}\NormalTok{,}\AttributeTok{type =} \StringTok{"l"}\NormalTok{,}\AttributeTok{col =} \StringTok{"green"}\NormalTok{)}
+
+\NormalTok{R\_f }\OtherTok{=} \FloatTok{0.002}
+\NormalTok{R }\OtherTok{=}\NormalTok{ mean\_Ri\_period1 }\SpecialCharTok{{-}}\NormalTok{ R\_f}
+
+\NormalTok{Z }\OtherTok{=}\NormalTok{ inv\_covmat\_single\_index }\SpecialCharTok{\%*\%}\NormalTok{ R}
+\NormalTok{x\_G }\OtherTok{=}\NormalTok{ Z }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(Z)}
+
+\FunctionTok{print}\NormalTok{(}\StringTok{"Composition of tangent"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Composition of tangent"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(x\_G)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##               [,1]
+##  [1,]  0.010937796
+##  [2,]  0.319321021
+##  [3,]  0.131841756
+##  [4,]  0.101903830
+##  [5,]  0.053551902
+##  [6,]  0.113994968
+##  [7,]  0.037017266
+##  [8,]  0.055757221
+##  [9,] -0.120504236
+## [10,]  0.240965202
+## [11,]  0.049880298
+## [12,] -0.107303614
+## [13,]  0.141226189
+## [14,]  0.041272294
+## [15,]  0.012135308
+## [16,] -0.123990706
+## [17,]  0.352251678
+## [18,] -0.447051001
+## [19,]  0.053015460
+## [20,]  0.161050368
+## [21,]  0.052121839
+## [22,]  0.013297532
+## [23,]  0.077646359
+## [24,] -0.102002979
+## [25,] -0.029028214
+## [26,]  0.001020932
+## [27,] -0.010733009
+## [28,]  0.020750892
+## [29,] -0.077968692
+## [30,] -0.022377660
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{varg }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(x\_G) }\SpecialCharTok{\%*\%}\NormalTok{ covariance\_matrix\_period1 }\SpecialCharTok{\%*\%}\NormalTok{ x\_G }
+\NormalTok{Rg }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(x\_G) }\SpecialCharTok{\%*\%}\NormalTok{ mean\_Ri\_period1 }
+\NormalTok{sigmag }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(varg)}
+\FunctionTok{points}\NormalTok{(sigmag,Rg, }\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{1}\NormalTok{,}\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{a =}\NormalTok{ R\_f, }\AttributeTok{b =}\NormalTok{ (Rg }\SpecialCharTok{{-}}\NormalTok{ R\_f)}\SpecialCharTok{/}\NormalTok{sigmag , }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{)}
+
+
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }
+       \AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{"Single index model var{-}cov"}\NormalTok{,}\StringTok{"Tangent when R\_f = 0.002"}\NormalTok{, }\StringTok{"CAL when R\_f = 0.002"}\NormalTok{),}
+       \AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"green"}\NormalTok{,}\StringTok{"blue"}\NormalTok{,}\StringTok{"red"}\NormalTok{),}
+       \AttributeTok{pch =} \DecValTok{19}\NormalTok{,}
+       \AttributeTok{fill =}\FunctionTok{c}\NormalTok{(}\StringTok{"green"}\NormalTok{,}\StringTok{"blue"}\NormalTok{,}\StringTok{"red"}\NormalTok{),}
+       \AttributeTok{cex=}\FloatTok{0.8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{proj5_files/figure-latex/unnamed-chunk-2-1.pdf} Part b:
+Adjusting the betas: Adjust the betas using Blume's and Vasicek's
+techniques. For the Blume technique use the two periods: 01- Jan-2015 to
+01-Jan-2020 and 01-Jan-2020 to 31-Mar-2023. For the Vasicek technique
+use only the period 01-Jan-2014 to 01-Jan-2019.
+
+Note: For the Blume technique our goal is to adjust the betas in
+01-Jan-2020 to 31-Mar-2023 to be better forecasts for the betas in
+period 01-Apr-2023 to 01-Apr-2027.
+
+For the Vasicek technique our goal is to adjust the betas in 01-Jan-2015
+to 01-Jan-2020 to be better forecasts for the betas in period
+01-Jan-2020 to 31-Mar-2023.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Blume }
+\CommentTok{\# Use both periods to adjust betas}
+\NormalTok{fit }\OtherTok{=} \FunctionTok{lm}\NormalTok{(betas\_period2 }\SpecialCharTok{\textasciitilde{}}\NormalTok{ betas\_period1)}
+\NormalTok{beta\_adj\_blume }\OtherTok{=}\NormalTok{ fit}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{+}\NormalTok{ fit}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{*}\NormalTok{ betas\_period2}
+
+\FunctionTok{print}\NormalTok{(}\StringTok{"Adjusted betas using blume technique"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Adjusted betas using blume technique"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(beta\_adj\_blume)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 1.2929549 1.1593250 2.0248862 1.0718453 1.2582033 0.9442843 1.0393931
+##  [8] 1.0530930 1.0025766 0.4342799 0.4776197 1.0354303 1.6022329 0.6063894
+## [15] 1.0001717 2.2070856 0.4415925 0.7638836 0.3725548 0.3437258 0.4144253
+## [22] 0.5458005 0.8674676 0.5747603 0.9214674 0.7875896 0.9919519 1.1254699
+## [29] 0.8974680 0.9648233
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Vasicek}
+\CommentTok{\# In this part period 2 is the forecasted period and period 1 is the historical period}
+\CommentTok{\# So we do not use period 2 to adjust betas}
+
+
+\NormalTok{vasicek\_term\_1 }\OtherTok{=}\NormalTok{ var\_betas\_period1}\SpecialCharTok{*}\FunctionTok{mean}\NormalTok{(betas\_period1)}\SpecialCharTok{/}\NormalTok{(}\FunctionTok{var}\NormalTok{(betas\_period1)}\SpecialCharTok{+}\NormalTok{var\_betas\_period1)}
+\NormalTok{vasicek\_term\_2 }\OtherTok{=} \FunctionTok{var}\NormalTok{(betas\_period1)}\SpecialCharTok{*}\NormalTok{betas\_period1}\SpecialCharTok{/}\NormalTok{(}\FunctionTok{var}\NormalTok{(betas\_period1)}\SpecialCharTok{+}\NormalTok{var\_betas\_period1)}
+\NormalTok{beta\_adj\_vasicek }\OtherTok{\textless{}{-}}\NormalTok{ vasicek\_term\_1 }\SpecialCharTok{+}\NormalTok{ vasicek\_term\_2}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Adjusted betas using vasicek technique"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Adjusted betas using vasicek technique"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(beta\_adj\_vasicek)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 1.2144277 1.1324378 1.5364148 1.0474245 1.2109141 0.9432582 1.0251021
+##  [8] 1.0285781 0.9927587 0.5177847 0.5412688 1.0220532 1.4595359 0.7812784
+## [15] 0.9944871 1.8185117 0.4922264 0.7791615 0.4639264 0.4007623 0.4538070
+## [22] 0.5801443 0.8757871 0.6405316 0.9280203 0.8019194 0.9757924 1.0104135
+## [29] 0.9011495 0.9575712
+\end{verbatim}
+
+Part c: Compute PRESS only for the Vasicek technique. (You can compute
+the PRESS only for the Vasicek technique because you have the actual
+betas in the period 01-Jan-2020 to 31-Mar-2023.)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PRESS\_direct }\OtherTok{=} \FunctionTok{sum}\NormalTok{((beta\_adj\_vasicek }\SpecialCharTok{{-}}\NormalTok{ betas\_period2)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}\SpecialCharTok{/}\NormalTok{(n\_stocks)}
+
+\NormalTok{fit }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(betas\_period2 }\SpecialCharTok{\textasciitilde{}}\NormalTok{ beta\_adj\_vasicek)}
+\NormalTok{beta\_regress }\OtherTok{=}\NormalTok{ fit}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{]}
+\NormalTok{r2 }\OtherTok{=} \FunctionTok{summary}\NormalTok{(fit)}\SpecialCharTok{$}\NormalTok{r.squared}
+
+\CommentTok{\#Bias Component}
+\NormalTok{term1 }\OtherTok{=}\NormalTok{ (}\FunctionTok{mean}\NormalTok{(betas\_period2) }\SpecialCharTok{{-}} \FunctionTok{mean}\NormalTok{(beta\_adj\_vasicek))}\SpecialCharTok{\^{}}\DecValTok{2}
+\FunctionTok{print}\NormalTok{(}\StringTok{"BIAS term:"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "BIAS term:"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(term1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.0005371626
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Sa2 }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{29}\SpecialCharTok{/}\DecValTok{30}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{var}\NormalTok{(betas\_period2)}
+\NormalTok{Sp2 }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{29}\SpecialCharTok{/}\DecValTok{30}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{var}\NormalTok{(beta\_adj\_vasicek)}
+
+\NormalTok{term2 }\OtherTok{=}\NormalTok{ ((}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{as.numeric}\NormalTok{(beta\_regress))}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}\SpecialCharTok{*}\NormalTok{Sp2}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Inefficiency"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Inefficiency"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(term2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.01084516
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{term3 }\OtherTok{=}\NormalTok{ (}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{r2)}\SpecialCharTok{*}\NormalTok{Sa2}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Random error"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Random error"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(term3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.005209049
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PRESS\_indirect }\OtherTok{=}\NormalTok{ term1 }\SpecialCharTok{+}\NormalTok{ term2 }\SpecialCharTok{+}\NormalTok{ term3}
+\FunctionTok{print}\NormalTok{(}\StringTok{"Press with decomposition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Press with decomposition"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(PRESS\_indirect)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.01659137
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\StringTok{"Press direct"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Press direct"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(PRESS\_direct)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.01659137
+\end{verbatim}
+
+\end{document}
